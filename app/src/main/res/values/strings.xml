@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">home</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="btnloginname">Login</string>
+    <string name="signup_btn_click">" New User? Click here to SignUp  "</string>
+    <string name="welcome_to_interact_app">Welcome to InteracT App</string>
+    <string name="signtextview">Welcome,InteracT</string>
+    <string name="signupemail">Email</string>
+    <string name="signUppass">Password</string>
+    <string name="signuprepass">Re-Enter Password</string>
+    <string name="signupconfirm">Click here to get Verified!</string>
+    <string name="titleinteract">InteracT</string>
+</resources>

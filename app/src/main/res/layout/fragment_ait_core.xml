@@ -1,0 +1,313 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/side_nav_bar"
+    tools:context="com.example.rams.interact.ait_core">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <!--students-->
+
+    <android.support.v7.widget.CardView
+        android:layout_margin="10dp"
+        android:id="@+id/layout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+
+
+            <RelativeLayout
+
+                android:layout_margin="5dp"
+                android:id="@+id/layout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/dp4"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_alignParentLeft="true"
+                    android:src="@drawable/ravi"
+                    />
+
+                <TextView
+                    android:layout_marginLeft="7dp"
+                    android:textAlignment="viewStart"
+                    android:textColor="#000"
+                    android:id="@+id/text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:layout_toEndOf="@+id/dp4"
+                    android:text="Rahul sriram B"
+                    />
+                <TextView
+                    android:layout_alignStart="@id/text"
+                    android:textAlignment="viewStart"
+                    android:textColor="#000"
+                    android:id="@+id/text2"
+                    android:layout_below="@id/text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/dp4"
+                    android:text="PRESIDENT,IT DEPT"
+                    />
+
+
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/layout2b"
+                android:layout_below="@id/layout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/dp2"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/ravi"
+                    />
+
+                <TextView
+                    android:layout_marginTop="28dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sathya seelan"
+                    android:textAlignment="viewEnd"
+                    android:textColor="#000"
+                    android:layout_marginRight="7dp"
+                    android:layout_toStartOf="@id/dp2"
+                    android:id="@+id/textView" />
+                <TextView
+                    android:layout_alignEnd="@id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TREASURER"
+                    android:textAlignment="viewEnd"
+                    android:textColor="#000"
+                    android:layout_toStartOf="@id/dp2"
+                    android:id="@+id/textView2"
+                    android:layout_below="@id/textView"
+                    />
+
+
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_below="@id/layout2b"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/dp3"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_alignParentLeft="true"
+                    android:src="@drawable/ravi"
+                    />
+
+                <TextView
+                    android:id="@+id/text2A"
+                    android:textAlignment="viewStart"
+                    android:textColor="#000"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:layout_marginLeft="7dp"
+                    android:layout_toEndOf="@+id/dp3"
+                    android:text="Abishek sunderesan" />
+                <TextView
+                    android:layout_below="@id/text2A"
+                    android:textAlignment="viewStart"
+                    android:textColor="#000"
+                    android:layout_alignStart="@id/text2A"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/dp3"
+                    android:text="SECRETARY" />
+
+
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                android:layout_margin="10dp"
+                android:layout_below="@id/layout3"
+                android:id="@+id/layout4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+
+
+                    <RelativeLayout
+
+                        android:layout_margin="5dp"
+                        android:id="@+id/layout8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/dp1"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_alignParentLeft="true"
+                            android:src="@drawable/ravi"
+                            />
+
+                        <TextView
+                            android:layout_marginLeft="7dp"
+                            android:textAlignment="viewStart"
+                            android:textColor="#000"
+                            android:id="@+id/text8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="28dp"
+                            android:layout_toEndOf="@+id/dp1"
+                            android:text="Syed shashina" />
+
+                        <TextView
+                            android:layout_below="@id/text8"
+                            android:textAlignment="viewStart"
+                            android:textColor="#000"
+                            android:id="@+id/text8A"
+                            android:layout_alignStart="@id/text8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@+id/dp1"
+                            android:text="DESIGNER" />
+
+
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/layout2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/layout8">
+
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/dp8"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_alignParentRight="true"
+                            android:src="@drawable/ravi" />
+
+                        <TextView
+                            android:id="@+id/txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="7dp"
+                            android:layout_marginTop="28dp"
+                            android:layout_toStartOf="@id/dp8"
+                            android:text="Rama krishna"
+                            android:textAlignment="viewEnd"
+                            android:textColor="#000" />
+
+                        <TextView
+                            android:id="@+id/txt2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignEnd="@id/txt"
+                            android:layout_below="@id/txt"
+                            android:layout_toStartOf="@id/dp8"
+                            android:text="DEVELOPER"
+                            android:textAlignment="viewEnd"
+                            android:textColor="#000" />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+
+                        android:layout_margin="5dp"
+                        android:layout_below="@id/layout2"
+                        android:id="@+id/layout9"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/dp9"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_alignParentLeft="true"
+                            android:src="@drawable/ravi"
+                            />
+
+                        <TextView
+                            android:layout_marginLeft="7dp"
+                            android:id="@+id/txt3"
+                            android:textAlignment="viewStart"
+                            android:textColor="#000"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="28dp"
+                            android:layout_toEndOf="@+id/dp9"
+                            android:text="sangeeth shravan" />
+                        <TextView
+                            android:layout_alignStart="@id/txt3"
+                            android:layout_below="@id/txt3"
+                            android:textAlignment="viewStart"
+                            android:textColor="#000"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@+id/dp9"
+                            android:text="ASSISTANT DESIGNER AND DEVLOPER" />
+
+
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+
+
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+</RelativeLayout>
+
+</FrameLayout>

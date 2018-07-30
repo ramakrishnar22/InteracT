@@ -25,7 +25,6 @@
         <activity android:name=".LoginActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"/>
         <activity android:name=".SignUpActivity" />
-        <activity android:name=".SetupActivity"></activity>
     </application>
 
 </manifest>

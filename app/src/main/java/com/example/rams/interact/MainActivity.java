@@ -1,7 +1,6 @@
 package com.example.rams.interact;
 
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.os.Bundle;
 
 import android.support.annotation.NonNull;
@@ -15,19 +14,23 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.rams.interact.utils.FontChanger;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener
@@ -38,31 +41,45 @@ public class MainActivity extends AppCompatActivity
     private Toolbar toolbar;
     private FirebaseAuth mAuth;
     private FirebaseFirestore firebaseFirestore;
-    Typeface normal;
-    FontChanger f;
-
     @Override
     protected void onStart() {
         super.onStart();
-        FirebaseUser currentUser = mAuth.getCurrentUser();
+        final FirebaseUser currentUser = mAuth.getCurrentUser();
         if(currentUser == null){
                 Intent mainIntent = new Intent(getApplicationContext(), LoginActivity.class);
                 startActivity(mainIntent);
                 finish();
        }else{
-            String user_id=mAuth.getCurrentUser().getUid();
+          final String user_id=mAuth.getCurrentUser().getUid();
             firebaseFirestore.collection("Users").document(user_id).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                 @Override
                 public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                     if(task.isSuccessful()){
                         if(!task.getResult().exists()){
-                            Intent setup=new Intent(MainActivity.this,SetupActivity.class);
-                            startActivity(setup);
-                            finish();
+                            Map<String,Object> addername=new HashMap<>();
+                            String mail=mAuth.getCurrentUser().getEmail();
+                            final String userextractname=mail.substring(0,mail.indexOf('@'));
+                            UserProfileChangeRequest upcr = new UserProfileChangeRequest.Builder().setDisplayName(userextractname).build();
+                            currentUser.updateProfile(upcr).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                        if(task.isSuccessful()){
+                                            Log.i("added","username---");
+                                        }
+                                }
+                            });
+                            addername.put("user_name",userextractname);
+                            firebaseFirestore.collection("Users").document(user_id).set(addername).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    TextView namer=findViewById(R.id.username);
+                                    namer.setText(userextractname);
+                                }
+                            });
                         }
                         else{
                             String name=task.getResult().getString("user_name");
-                            userName = name;
+                            userName = mAuth.getCurrentUser().getDisplayName();
                             TextView namer=findViewById(R.id.username);
                             namer.setText(name);
                         }
@@ -72,7 +89,7 @@ public class MainActivity extends AppCompatActivity
                         Toast.makeText(getApplicationContext(),"Retrieve Error:"+doc,Toast.LENGTH_SHORT).show();
                     }
                 }
-           });
+         });
         }
     }
 
@@ -80,9 +97,6 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        normal = Typeface.createFromAsset(getAssets(),"font/sourceSansProRegular.ttf");
-        f = new FontChanger(normal);
-        f.replaceFonts((ViewGroup)this.findViewById(android.R.id.content));
         setContentView(R.layout.activity_main);
         mAuth = FirebaseAuth.getInstance();
         firebaseFirestore=FirebaseFirestore.getInstance();
@@ -150,12 +164,6 @@ public class MainActivity extends AppCompatActivity
             finish();
             return true;
         }
-        else{
-            Intent mainIntent = new Intent(getApplicationContext(),SetupActivity.class);
-            startActivity(mainIntent);
-
-        }
-
         return false;
     }
 

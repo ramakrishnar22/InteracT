@@ -1,21 +1,26 @@
 package com.example.rams.interact;
 
-
-import android.os.Bundle;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.github.chrisbanes.photoview.PhotoView;
+import com.github.chrisbanes.photoview.PhotoViewAttacher;
+
 public class timetable_page extends AppCompatActivity {
 
-        private Button ita2;
-    private Button ita3;
-   private Button ita4;
-    private Button itb2;
-    private Button itb3;
-    private Button itb4;
+    Button ita2;
+    Button ita3;
+    Button ita4;
+    Button itb2;
+    Button itb3;
+    Button itb4;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,14 +37,19 @@ public class timetable_page extends AppCompatActivity {
 
 
 
+
         ita2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+
                 TextView tt=(TextView)findViewById(R.id.tt);
                 tt.setText("IT A - II YEAR");
-                ImageView img=(ImageView)findViewById(R.id.image1);
-                img.setBackgroundResource(R.drawable.ita2);
+                PhotoView photoView = (PhotoView) findViewById(R.id.image1);
+                photoView.setImageResource(R.drawable.ita2);
+
+            //   img.setBackgroundResource(R.drawable.ita2);
+
 
 
 
@@ -53,8 +63,12 @@ public class timetable_page extends AppCompatActivity {
 
                 TextView tt=(TextView)findViewById(R.id.tt);
                 tt.setText("IT A - III YEAR");
-                ImageView img=(ImageView)findViewById(R.id.image1);
-                img.setBackgroundResource(R.drawable.it3a);
+               // ImageView img=(ImageView)findViewById(R.id.image1);
+                PhotoView photoView = (PhotoView) findViewById(R.id.image1);
+                photoView.setImageResource(R.drawable.it3a);
+               // mAttacher= new PhotoViewAttacher(img);
+                //img.setBackgroundResource(R.drawable.it3a);
+               // mAttacher.update();
 
             }
         });
@@ -64,9 +78,15 @@ public class timetable_page extends AppCompatActivity {
             public void onClick(View v) {
 
                 TextView tt=(TextView)findViewById(R.id.tt);
-                tt.setText("IT A - IV YEAR");
-                ImageView img=(ImageView)findViewById(R.id.image1);
-                img.setBackgroundResource(R.drawable.ita4);
+               tt.setText("IT A - IV YEAR");
+
+                PhotoView photoView = (PhotoView) findViewById(R.id.image1);
+                photoView.setImageResource(R.drawable.ita4);
+               //    ImageView img=(ImageView)findViewById(R.id.image1);
+             //   mAttacher= new PhotoViewAttacher(img);
+              //  img.setBackgroundResource(R.drawable.ita4);
+               // mAttacher.update();
+
 
             }
         });
@@ -78,8 +98,14 @@ public class timetable_page extends AppCompatActivity {
 
                 TextView tt=(TextView)findViewById(R.id.tt);
                 tt.setText("IT B - II YEAR");
-                ImageView img=(ImageView)findViewById(R.id.image1);
-                img.setBackgroundResource(R.drawable.ita2);
+
+                PhotoView photoView = (PhotoView) findViewById(R.id.image1);
+                photoView.setImageResource(R.drawable.itb2);
+          //      ImageView img=(ImageView)findViewById(R.id.image1);
+           //     mAttacher= new PhotoViewAttacher(img);
+
+             //   img.setBackgroundResource(R.drawable.ita2);
+               // mAttacher.update();
 
             }
         });
@@ -89,8 +115,15 @@ public class timetable_page extends AppCompatActivity {
 
                 TextView tt=(TextView)findViewById(R.id.tt);
                 tt.setText("IT B - III YEAR");
-                ImageView img=(ImageView)findViewById(R.id.image1);
-                img.setBackgroundResource(R.drawable.it3b);
+
+                PhotoView photoView = (PhotoView) findViewById(R.id.image1);
+                photoView.setImageResource(R.drawable.it3b);
+
+              //  ImageView img=(ImageView)findViewById(R.id.image1);
+                //mAttacher= new PhotoViewAttacher(img);
+
+               // img.setBackgroundResource(R.drawable.it3b);
+               // mAttacher.update();
 
             }
         });
@@ -99,8 +132,14 @@ public class timetable_page extends AppCompatActivity {
             public void onClick(View v) {
                 TextView tt=(TextView)findViewById(R.id.tt);
                 tt.setText("IT B - IV YEAR");
-                ImageView img=(ImageView)findViewById(R.id.image1);
-                img.setBackgroundResource(R.drawable.itb4);
+                PhotoView photoView = (PhotoView) findViewById(R.id.image1);
+                photoView.setImageResource(R.drawable.itb4);
+
+             //   ImageView img=(ImageView)findViewById(R.id.image1);
+              //  mAttacher= new PhotoViewAttacher(img);
+
+                //img.setBackgroundResource(R.drawable.itb4);
+               // mAttacher.update();
 
             }
         });
@@ -109,5 +148,4 @@ public class timetable_page extends AppCompatActivity {
 
     }
 }
-
 

@@ -21,8 +21,9 @@
         </activity>
         <activity android:name=".timetable_page" />
         <activity android:name=".utschedule_page" />
-        <activity android:name=".about_page" />
-        <activity android:name=".LoginActivity" />
+        <activity android:name=".about_page"/>
+        <activity android:name=".LoginActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"/>
         <activity android:name=".SignUpActivity" />
         <activity android:name=".SetupActivity"></activity>
     </application>

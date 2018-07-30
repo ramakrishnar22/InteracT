@@ -1,6 +1,7 @@
 package com.example.rams.interact;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 
 import android.support.annotation.NonNull;
@@ -16,9 +17,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.rams.interact.utils.FontChanger;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -35,6 +38,9 @@ public class MainActivity extends AppCompatActivity
     private Toolbar toolbar;
     private FirebaseAuth mAuth;
     private FirebaseFirestore firebaseFirestore;
+    Typeface normal;
+    FontChanger f;
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -74,6 +80,9 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        normal = Typeface.createFromAsset(getAssets(),"font/sourceSansProRegular.ttf");
+        f = new FontChanger(normal);
+        f.replaceFonts((ViewGroup)this.findViewById(android.R.id.content));
         setContentView(R.layout.activity_main);
         mAuth = FirebaseAuth.getInstance();
         firebaseFirestore=FirebaseFirestore.getInstance();
@@ -139,6 +148,7 @@ public class MainActivity extends AppCompatActivity
             Intent mainIntent = new Intent(getApplicationContext(),LoginActivity.class);
             startActivity(mainIntent);
             finish();
+            return true;
         }
         else{
             Intent mainIntent = new Intent(getApplicationContext(),SetupActivity.class);
@@ -146,7 +156,7 @@ public class MainActivity extends AppCompatActivity
 
         }
 
-        return super.onOptionsItemSelected(item);
+        return false;
     }
 
     @SuppressWarnings("StatementWithEmptyBody")

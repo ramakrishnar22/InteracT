@@ -1,6 +1,7 @@
 package com.example.rams.interact;
 
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
@@ -17,6 +18,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.example.rams.interact.utils.FontChanger;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -29,6 +31,7 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.ListenerRegistration;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
 
@@ -48,10 +51,11 @@ public class Chat extends Fragment {
     FirebaseFirestore fb;
     FirebaseAuth fa;
     EditText e;
-    DocumentSnapshot docSnap;
+    ListenerRegistration listenerRegistration;
     public Chat() {
         // Required empty public constructor
     }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -72,28 +76,32 @@ public class Chat extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         ImageButton ib = v.findViewById(R.id.sendBTN);
         list = new ArrayList<>();
-        fb.collection("Messages").orderBy("time", Query.Direction.ASCENDING).addSnapshotListener(new EventListener<QuerySnapshot>() {
+        listenerRegistration = fb.collection("Messages").orderBy("time", Query.Direction.ASCENDING).addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(QuerySnapshot documentSnapshots, FirebaseFirestoreException e) {
-                for(DocumentChange doc:documentSnapshots.getDocumentChanges()){
-                    if(doc.getType()==DocumentChange.Type.ADDED){
-                        Map<String,Object> result = doc.getDocument().getData();
-                        long millis = (long)result.get("time");
-                        Calendar c = Calendar.getInstance();
-                        c.setTimeInMillis(millis);
-                        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM HH:mm");
-                        String s = sdf.format(c.getTime());
-                        String name;
-                        if(String.valueOf(result.get("name")).equals(MainActivity.userName))
-                            name="Me";
-                        else
-                            name = String.valueOf(result.get("name"));
-                        list.add(new Messages(String.valueOf(result.get("msg")),name,s));
+                if(e==null) {
+                    List<DocumentChange> docs;
+                    docs = documentSnapshots.getDocumentChanges();
+                    for (DocumentChange doc : documentSnapshots.getDocumentChanges()) {
+                        if (doc.getType() == DocumentChange.Type.ADDED) {
+                            Map<String, Object> result = doc.getDocument().getData();
+                            long millis = (long) result.get("time");
+                            Calendar c = Calendar.getInstance();
+                            c.setTimeInMillis(millis);
+                            SimpleDateFormat sdf = new SimpleDateFormat("dd-MM HH:mm");
+                            String s = sdf.format(c.getTime());
+                            String name;
+                            if (String.valueOf(result.get("name")).equals(MainActivity.userName))
+                                name = "Me";
+                            else
+                                name = String.valueOf(result.get("name"));
+                            list.add(new Messages(String.valueOf(result.get("msg")), name, s));
+                        }
                     }
+                    ChatAdapter ca = new ChatAdapter(getActivity(), list);
+                    r.setAdapter(ca);
+                    r.setLayoutManager(llm);
                 }
-                ChatAdapter ca = new ChatAdapter(getActivity(),list);
-                r.setAdapter(ca);
-                r.setLayoutManager(llm);
             }
         });
         ib.setOnClickListener(new View.OnClickListener() {

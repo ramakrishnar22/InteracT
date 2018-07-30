@@ -8,7 +8,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="btnloginname">Login</string>
-    <string name="signup_btn_click">" New User? Click here to SignUp  "</string>
+    <string name="signup_btn_click">"New User? Click here to SignUp"</string>
     <string name="welcome_to_interact_app">Welcome to InteracT App</string>
     <string name="signtextview">Welcome,InteracT</string>
     <string name="signupemail">Email</string>
@@ -16,4 +16,7 @@
     <string name="signuprepass">Re-Enter Password</string>
     <string name="signupconfirm">Click here to get Verified!</string>
     <string name="titleinteract">InteracT</string>
+    <string name="Mission">1.Impart sound knownlegde of IT domain to the students.
+        2.Nuture students to contribute to dynamic industrial needs.
+        3.Empower faculty with the knownlegde in the emerging areas of IT</string>
 </resources>

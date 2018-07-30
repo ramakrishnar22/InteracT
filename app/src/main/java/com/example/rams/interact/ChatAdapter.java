@@ -1,13 +1,16 @@
 package com.example.rams.interact;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.lang.reflect.Type;
 import java.util.List;
 
 public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ChatViewHolder>{
@@ -29,6 +32,10 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ChatViewHolder
     @Override
     public void onBindViewHolder(@NonNull ChatViewHolder holder, int position) {
         Messages m = list.get(position);
+        Typeface typeface = Typeface.createFromAsset(mContext.getAssets(),"font/sourceSansProLight.ttf");
+        holder.t1.setTypeface(typeface);
+        holder.t2.setTypeface(typeface);
+        holder.t3.setTypeface(typeface);
         holder.t1.setText(m.getUser());
         holder.t2.setText(m.getMsg());
         holder.t3.setText(m.getTime());

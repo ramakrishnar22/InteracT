@@ -1,18 +1,178 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/side_nav_bar"
     tools:context="com.example.rams.interact.utschedule_page">
 
 
-
-
-    <TextView
-        android:layout_width="wrap_content"
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="UT SCHEDULE PAGE"
-        />
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="3dp"
+        app:cardCornerRadius="8dp"
+        app:cardMaxElevation="8dp"
+        android:id="@+id/cardView">
 
-</android.support.constraint.ConstraintLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="15dp"
+            android:text="UT SCHEDULE"
+            android:textAlignment="center"
+            android:textColor="#1e90ef"
+            android:textSize="40dp"
+            android:textStyle="bold" />
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/layout1"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_below="@+id/cardView"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="3dp"
+        app:cardCornerRadius="9dp"
+        app:cardElevation="8dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_margin="4dp"
+                android:text="choose and click"
+                android:textAlignment="center"
+                android:textColor="#000"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/item"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="25dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/sem3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:layout_weight="1"
+                    android:checked="false"
+                    android:text="semester 3"
+                    android:textColor="#1e90ff" />
+
+                <RadioButton
+                    android:id="@+id/sem5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:layout_weight="1"
+                    android:checked="false"
+                    android:text="semester 5"
+                    android:textColor="#1e90ff" />
+
+                <RadioButton
+                    android:id="@+id/sem7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:layout_weight="1"
+                    android:checked="false"
+                    android:text="semester 7"
+                    android:textColor="#1e90ff" />
+
+
+            </RadioGroup>
+
+            <RelativeLayout
+
+                android:id="@+id/units"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/item"
+                android:layout_marginTop="26dp"
+                android:orientation="horizontal">
+
+
+                <Button
+                    android:id="@+id/unit1"
+                    android:layout_width="90dp"
+                    android:layout_height="50dp"
+                    android:layout_alignBaseline="@id/unit2"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/side_nav_bar"
+                    android:text="unit i" />
+
+                <Button
+                    android:id="@+id/unit2"
+                    android:layout_width="90dp"
+                    android:layout_height="50dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/side_nav_bar"
+                    android:text="unit ii" />
+
+                <Button
+                    android:id="@+id/unit3"
+                    android:layout_width="90dp"
+                    android:layout_height="50dp"
+                    android:layout_alignBaseline="@id/unit2"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/side_nav_bar"
+                    android:text="unit iii" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+
+     <android.support.v7.widget.CardView
+           android:layout_margin="5dp"
+           app:cardCornerRadius="9dp"
+           android:layout_below="@id/layout1"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+
+           <RelativeLayout
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+
+               android:layout_centerHorizontal="true"
+               android:layout_margin="0.5dp">
+
+
+               <com.github.chrisbanes.photoview.PhotoView
+                   android:id="@+id/image1"
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:layout_alignParentTop="true"
+                   android:layout_centerHorizontal="true" />
+
+
+
+
+
+
+           </RelativeLayout>
+       </android.support.v7.widget.CardView>
+   </RelativeLayout>
+
+

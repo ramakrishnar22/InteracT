@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/side_nav_bar"
     tools:context="com.example.rams.interact.identity">
 
@@ -9,7 +10,11 @@
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp">
+        android:layout_margin="10dp"
+        app:cardElevation="0dp"
+        app:cardCornerRadius="15dp"
+        android:layout_gravity="center"
+        app:cardBackgroundColor="#99000000">
 
 
         <RelativeLayout
@@ -26,7 +31,7 @@
                     android:id="@+id/IDT"
                     android:text="IDENTITY VOLUME 5-2018"
                     android:layout_margin="5dp"
-                    android:textColor="#000"
+                    android:textColor="#fff"
                     android:textStyle="bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
@@ -56,7 +61,7 @@
                     android:id="@+id/IDT2"
                     android:text="IDENTITY VOLUME 4-2017"
                     android:layout_margin="5dp"
-                    android:textColor="#000"
+                    android:textColor="#fff"
                     android:textStyle="bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
@@ -86,7 +91,7 @@
                     android:id="@+id/IDT3"
                     android:text="IDENTITY VOLUME 3-2016"
                     android:layout_margin="5dp"
-                    android:textColor="#000"
+                    android:textColor="#fff"
                     android:textStyle="bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
@@ -116,7 +121,7 @@
                     android:id="@+id/IDT4"
                     android:text="IDENTITY VOLUME 2-2015"
                     android:layout_margin="5dp"
-                    android:textColor="#000"
+                    android:textColor="#fff"
                     android:textStyle="bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />

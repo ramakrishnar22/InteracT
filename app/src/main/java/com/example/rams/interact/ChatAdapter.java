@@ -32,8 +32,9 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ChatViewHolder
     @Override
     public void onBindViewHolder(@NonNull ChatViewHolder holder, int position) {
         Messages m = list.get(position);
+        Typeface bold = Typeface.createFromAsset(mContext.getAssets(),"font/sourceSansProRegular.ttf");
         Typeface typeface = Typeface.createFromAsset(mContext.getAssets(),"font/sourceSansProLight.ttf");
-        holder.t1.setTypeface(typeface);
+        holder.t1.setTypeface(bold);
         holder.t2.setTypeface(typeface);
         holder.t3.setTypeface(typeface);
         holder.t1.setText(m.getUser());

@@ -13,38 +13,37 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
-        android:layout_margin="3dp"
-        app:cardCornerRadius="8dp"
-        app:cardMaxElevation="8dp"
+        android:layout_margin="15dp"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="0dp"
+        app:cardBackgroundColor="#99000000"
         android:id="@+id/cardView">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="15dp"
-            android:text="UT SCHEDULE"
+            android:text="UT Schedule"
             android:textAlignment="center"
             android:textColor="#1e90ef"
             android:textSize="40dp"
             android:textStyle="bold" />
-
     </android.support.v7.widget.CardView>
 
     <android.support.v7.widget.CardView
         android:id="@+id/layout1"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/cardView"
         android:layout_centerHorizontal="true"
-        android:layout_margin="3dp"
-        app:cardCornerRadius="9dp"
-        app:cardElevation="8dp">
+        android:layout_margin="15dp"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="0dp"
+        app:cardBackgroundColor="#99000000">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_margin="10dp">
 
             <TextView
                 android:id="@+id/textView3"
@@ -52,9 +51,9 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_margin="4dp"
-                android:text="choose and click"
+                android:text="Choose and Click"
                 android:textAlignment="center"
-                android:textColor="#000"
+                android:textColor="#fff"
                 android:textSize="15dp"
                 android:textStyle="bold" />
 
@@ -73,7 +72,7 @@
                     android:layout_margin="3dp"
                     android:layout_weight="1"
                     android:checked="false"
-                    android:text="semester 3"
+                    android:text="Semester 3"
                     android:textColor="#1e90ff" />
 
                 <RadioButton
@@ -83,7 +82,7 @@
                     android:layout_margin="3dp"
                     android:layout_weight="1"
                     android:checked="false"
-                    android:text="semester 5"
+                    android:text="Semester 5"
                     android:textColor="#1e90ff" />
 
                 <RadioButton
@@ -117,7 +116,7 @@
                     android:layout_alignBaseline="@id/unit2"
                     android:layout_marginLeft="10dp"
                     android:background="@drawable/side_nav_bar"
-                    android:text="unit i" />
+                    android:text="UT I" />
 
                 <Button
                     android:id="@+id/unit2"
@@ -126,7 +125,7 @@
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
                     android:background="@drawable/side_nav_bar"
-                    android:text="unit ii" />
+                    android:text="UT II" />
 
                 <Button
                     android:id="@+id/unit3"
@@ -136,7 +135,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_marginRight="10dp"
                     android:background="@drawable/side_nav_bar"
-                    android:text="unit iii" />
+                    android:text="UT III" />
 
             </RelativeLayout>
 
@@ -145,11 +144,12 @@
 
 
      <android.support.v7.widget.CardView
-           android:layout_margin="5dp"
-           app:cardCornerRadius="9dp"
+           android:layout_margin="15dp"
+           app:cardCornerRadius="15dp"
            android:layout_below="@id/layout1"
            android:layout_width="match_parent"
-           android:layout_height="wrap_content">
+           android:layout_height="wrap_content"
+         app:cardBackgroundColor="#99000000">
 
            <RelativeLayout
                android:layout_width="match_parent"
@@ -165,12 +165,6 @@
                    android:layout_height="match_parent"
                    android:layout_alignParentTop="true"
                    android:layout_centerHorizontal="true" />
-
-
-
-
-
-
            </RelativeLayout>
        </android.support.v7.widget.CardView>
    </RelativeLayout>

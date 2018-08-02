@@ -1,13 +1,16 @@
 package com.example.rams.interact;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.rams.interact.utils.FontChanger;
 import com.github.chrisbanes.photoview.PhotoView;
 import com.github.chrisbanes.photoview.PhotoViewAttacher;
 
@@ -21,13 +24,12 @@ public class timetable_page extends AppCompatActivity {
     Button itb4;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timetable_page);
-
-
+        FontChanger fontChanger = new FontChanger(getAssets(),"font/sourceSansProSemiBold.ttf");
+        fontChanger.replaceFonts((ViewGroup)this.findViewById(android.R.id.content));
         ita2=(Button)findViewById(R.id.ita2);
         ita3=(Button)findViewById(R.id.ita3);
         ita4=(Button)findViewById(R.id.ita4);

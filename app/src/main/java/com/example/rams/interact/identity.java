@@ -11,6 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.example.rams.interact.utils.FontChanger;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -27,12 +29,19 @@ public class identity extends Fragment  implements View.OnClickListener{
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        FontChanger fontChanger = new FontChanger(getActivity().getAssets(),"font/sourceSansProSemiBold.ttf");
+        fontChanger.replaceFonts((ViewGroup)this.getView());
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
       //  return inflater.inflate(R.layout.fragment_identity, container, false);
-
         View rootView = inflater.inflate(R.layout.fragment_identity, container, false);
         btn1= rootView.findViewById(R.id.btn1);
         btn2= rootView.findViewById(R.id.btn2);

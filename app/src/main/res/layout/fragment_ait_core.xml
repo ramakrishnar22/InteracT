@@ -26,6 +26,7 @@
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
+                app:cardElevation="0dp"
                 android:id="@+id/rahul"
                 android:layout_marginTop="10dp"
                 android:layout_toRightOf="@id/rahuldp"
@@ -71,6 +72,7 @@
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
+                app:cardElevation="0dp"
                 android:id="@+id/dharsh"
                 android:layout_marginTop="10dp"
                 android:layout_below="@id/rahuldp"
@@ -117,6 +119,7 @@
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
+                app:cardElevation="0dp"
                 android:id="@+id/sundu"
                 android:layout_marginTop="10dp"
                 android:layout_toRightOf="@id/sundudp"
@@ -167,6 +170,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_below="@id/sundu"
                 android:layout_toLeftOf="@id/dharshdp"
+                app:cardElevation="0dp"
                 app:cardBackgroundColor="#99000000"
                 android:layout_marginRight="-45dp"
                 app:cardCornerRadius="15dp"
@@ -201,6 +205,7 @@
                 android:layout_below="@id/seelu"
                 android:layout_margin="15dp"
                 app:cardCornerRadius="15dp"
+                card_view:cardElevation="0dp"
                 app:cardBackgroundColor="#99000000"
                 xmlns:card_view="http://schemas.android.com/apk/res-auto"
                 card_view:cardUseCompatPadding="true">
@@ -228,6 +233,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/events"
                         android:layout_toRightOf="@id/loga"
+                        android:id="@+id/loganame"
                         android:text="Loga Sanjay"
                         android:layout_marginTop="10dp"
                         android:textColor="#ffffff"
@@ -246,6 +252,7 @@
                         android:layout_below="@id/loga"
                         android:layout_toRightOf="@id/priya"
                         android:text="Priya Dharshini"
+                        android:id="@+id/priyaname"
                         android:textColor="#ffffff"
                         android:layout_marginTop="10dp"
                         android:textAlignment="center"
@@ -263,6 +270,7 @@
                         android:layout_below="@id/priya"
                         android:layout_toRightOf="@id/ravi"
                         android:text="Ravi Kiran"
+                        android:id="@+id/raviname"
                         android:layout_marginTop="10dp"
                         android:textColor="#ffffff"
                         android:textAlignment="center"
@@ -278,6 +286,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:id="@+id/varshname"
                         android:layout_below="@id/ravi"
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="10dp"

@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.rams.interact.utils.FontChanger;
 
@@ -16,7 +17,7 @@ import com.example.rams.interact.utils.FontChanger;
  */
 public class home extends Fragment {
 
-
+    View rootView;
     public home() {
         // Required empty public constructor
         }
@@ -31,12 +32,15 @@ public class home extends Fragment {
         super.onActivityCreated(savedInstanceState);
         FontChanger f = new FontChanger(getActivity().getAssets(),"font/sourceSansProLight.ttf");
         f.replaceFonts((ViewGroup)this.getView());
+        ((TextView)rootView.findViewById(R.id.Mission)).setTypeface(Typeface.createFromAsset(getActivity().getAssets(),"font/sourceSansProSemiBold.ttf"));
+        ((TextView)rootView.findViewById(R.id.VisionT)).setTypeface(Typeface.createFromAsset(getActivity().getAssets(),"font/sourceSansProSemiBold.ttf"));
+        ((TextView)rootView.findViewById(R.id.AboutT)).setTypeface(Typeface.createFromAsset(getActivity().getAssets(),"font/sourceSansProSemiBold.ttf"));
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View rootView = inflater.inflate(R.layout.fragment_home, container, false);
+        rootView = inflater.inflate(R.layout.fragment_home, container, false);
         return rootView;
     }
 }

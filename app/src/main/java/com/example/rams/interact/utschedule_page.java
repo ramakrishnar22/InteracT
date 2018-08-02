@@ -5,12 +5,14 @@ import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import com.example.rams.interact.utils.FontChanger;
 import com.github.chrisbanes.photoview.PhotoView;
 
 public class utschedule_page extends AppCompatActivity {
@@ -21,7 +23,8 @@ public class utschedule_page extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_utschedule_page);
-
+        FontChanger fontChanger = new FontChanger(getAssets(),"font/sourceSansProSemiBold.ttf");
+        fontChanger.replaceFonts((ViewGroup)this.findViewById(android.R.id.content));
       final   RadioButton sem3=(RadioButton)findViewById(R.id.sem3);
 
       final  RadioButton sem5=(RadioButton)findViewById(R.id.sem5);

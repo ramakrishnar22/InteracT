@@ -35,7 +35,6 @@ import java.util.Map;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener
 {
-    static String userName;
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private Toolbar toolbar;
@@ -79,14 +78,17 @@ public class MainActivity extends AppCompatActivity
                         }
                         else{
                             String name=task.getResult().getString("user_name");
-                            userName = mAuth.getCurrentUser().getDisplayName();
                             TextView namer=findViewById(R.id.username);
                             namer.setText(name);
                         }
                     }
                     else{
                         String doc=task.getException().getMessage();
-                        Toast.makeText(getApplicationContext(),"Retrieve Error:"+doc,Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"Please use the mobile data to login in this app!",Toast.LENGTH_SHORT).show();
+                        mAuth.signOut();
+                        Intent mainIntent = new Intent(getApplicationContext(), LoginActivity.class);
+                        startActivity(mainIntent);
+                        finish();
                     }
                 }
          });

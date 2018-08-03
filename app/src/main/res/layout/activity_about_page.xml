@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:background="@drawable/side_nav_bar"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     tools:context="com.example.rams.interact.about_page">
 
 

@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
@@ -52,44 +53,10 @@ public class LoginActivity extends AppCompatActivity {
         getWindow().getDecorView().setSystemUiVisibility(
                 View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                         | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
-        Typeface normal = Typeface.createFromAsset(getAssets(),"font/sourceSansProRegular.ttf");
-        FontChanger f = new FontChanger(normal);
+        Typeface normal = Typeface.createFromAsset(getAssets(),"font/sourceSansProSemiBold.ttf");
+        FontChanger f = new FontChanger(getAssets(),"font/sourceSansProRegular.ttf");
         f.replaceFonts((ViewGroup)this.findViewById(android.R.id.content));
-        Zoomin = AnimationUtils.loadAnimation(this,R.anim.zoomin);
-        Zoomout = AnimationUtils.loadAnimation(this,R.anim.zoomout);
-        ((ImageView)findViewById(R.id.deptbg)).setAnimation(Zoomin);
-        Zoomin.setAnimationListener(new Animation.AnimationListener() {
-            @Override
-            public void onAnimationStart(Animation animation) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animation animation) {
-                ((ImageView)findViewById(R.id.deptbg)).setAnimation(Zoomout);
-            }
-
-            @Override
-            public void onAnimationRepeat(Animation animation) {
-
-            }
-        });
-        Zoomout.setAnimationListener(new Animation.AnimationListener() {
-            @Override
-            public void onAnimationStart(Animation animation) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animation animation) {
-                ((ImageView)findViewById(R.id.deptbg)).setAnimation(Zoomin);
-            }
-
-            @Override
-            public void onAnimationRepeat(Animation animation) {
-
-            }
-        });
+        ((TextView)findViewById(R.id.interacTT)).setTypeface(normal);
     }
 
     @Override
@@ -98,6 +65,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         progressbar=findViewById(R.id.progressBar3);
         mAuth = FirebaseAuth.getInstance();
+        setAnimation();
         emailid = findViewById(R.id.user_name);
         passwordid = findViewById(R.id.user_pass);
         loginbtn = findViewById(R.id.btnlogin);
@@ -146,5 +114,45 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+    }
+    public void setAnimation(){
+        Zoomin = AnimationUtils.loadAnimation(this,R.anim.zoomin);
+        Zoomout = AnimationUtils.loadAnimation(this,R.anim.zoomout);
+        ((ImageView)findViewById(R.id.deptbg)).startAnimation(Zoomin);
+        Log.i("Animation","ZoomIN");
+        Zoomin.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                Log.i("Animation","ZoomOUT");
+                ((ImageView)findViewById(R.id.deptbg)).startAnimation(Zoomout);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+        Zoomout.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                Log.i("Animation","ZoomIN");
+                ((ImageView)findViewById(R.id.deptbg)).startAnimation(Zoomin);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
     }
 }

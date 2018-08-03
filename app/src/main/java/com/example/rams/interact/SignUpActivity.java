@@ -7,17 +7,23 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
+import android.util.Log;
 import android.view.ActionMode;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.example.rams.interact.utils.FontChanger;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -32,17 +38,60 @@ public class SignUpActivity extends AppCompatActivity {
     private EditText signuppass;
     private EditText signuppass1;
     private Button signupbtn;
+    Animation Zoomin,Zoomout;
     private CheckBox showpass;
     private ProgressBar progressbar;
     private FirebaseAuth mAuth;
     private FirebaseUser currentUser;
     private static final String email_pattern="^([^@])+@(.*)it\\.ssn\\.edu\\.in";
     private static final String email_pattern1="^([^@])+@(.*)ssn\\.edu\\.in";
+    public void setAnimation(){
+        Zoomin = AnimationUtils.loadAnimation(this,R.anim.zoomin);
+        Zoomout = AnimationUtils.loadAnimation(this,R.anim.zoomout);
+        ((ImageView)findViewById(R.id.deptbg)).startAnimation(Zoomin);
+        Log.i("Animation","ZoomIN");
+        Zoomin.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                Log.i("Animation","ZoomOUT");
+                ((ImageView)findViewById(R.id.deptbg)).startAnimation(Zoomout);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+        Zoomout.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                Log.i("Animation","ZoomIN");
+                ((ImageView)findViewById(R.id.deptbg)).startAnimation(Zoomin);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
-        getSupportActionBar().hide();
+        setAnimation();
+        FontChanger f = new FontChanger(getAssets(),"font/sourceSansProRegular.ttf");
+        f.replaceFonts((ViewGroup)this.findViewById(android.R.id.content));
         signupmail=findViewById(R.id.signupmail);
         signuppass=findViewById(R.id.signuppass);
         signuppass1=findViewById(R.id.signuppass1);

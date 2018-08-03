@@ -53,6 +53,7 @@ public class Chat extends Fragment {
     LinearLayoutManager llm;
     FirebaseFirestore fb;
     FirebaseAuth fa;
+    String checkname,checkmsg;
     EditText e;
     ListenerRegistration listenerRegistration;
     boolean mobileDataEnabled;
@@ -68,10 +69,11 @@ public class Chat extends Fragment {
         v = inflater.inflate(R.layout.fragment_chat, container, false);
         r = v.findViewById(R.id.recycle);
         llm = new LinearLayoutManager(getActivity());
+        checkname="";
+        checkmsg="";
         llm.setStackFromEnd(true);
         r.setLayoutManager(llm);
         mobileDataEnabled=false;
-
         fa = FirebaseAuth.getInstance();
         fb = FirebaseFirestore.getInstance();
         e = v.findViewById(R.id.sendText);
@@ -102,7 +104,13 @@ public class Chat extends Fragment {
                                 name = "Me";
                             else
                                 name = String.valueOf(result.get("name"));
-                            list.add(new Messages(String.valueOf(result.get("msg")), name, s));
+                            if (String.valueOf(result.get("name")).equals(checkname) && String.valueOf(result.get("msg")).equals(checkmsg))
+                                continue;
+                            else {
+                                list.add(new Messages(String.valueOf(result.get("msg")), name, s));
+                                checkname = String.valueOf(result.get("name"));
+                                checkmsg = String.valueOf(result.get("msg"));
+                            }
                         }
                     }
                     ChatAdapter ca = new ChatAdapter(getActivity(), list);
@@ -136,6 +144,7 @@ public class Chat extends Fragment {
             msgSend.put("name", fa.getCurrentUser().getDisplayName());
             msgSend.put("msg", e.getText().toString());
             msgSend.put("time", Calendar.getInstance().getTimeInMillis());
+
             fb.collection("Messages").add(msgSend).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                 @Override
                 public void onSuccess(DocumentReference documentReference) {

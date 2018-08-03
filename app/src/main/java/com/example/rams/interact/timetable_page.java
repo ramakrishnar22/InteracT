@@ -67,7 +67,7 @@ public class timetable_page extends AppCompatActivity {
                 tt.setText("IT A - III YEAR");
                // ImageView img=(ImageView)findViewById(R.id.image1);
                 PhotoView photoView = (PhotoView) findViewById(R.id.image1);
-                photoView.setImageResource(R.drawable.it3a);
+                photoView.setImageResource(R.drawable.ita3);
                // mAttacher= new PhotoViewAttacher(img);
                 //img.setBackgroundResource(R.drawable.it3a);
                // mAttacher.update();
@@ -117,9 +117,8 @@ public class timetable_page extends AppCompatActivity {
 
                 TextView tt=(TextView)findViewById(R.id.tt);
                 tt.setText("IT B - III YEAR");
-
                 PhotoView photoView = (PhotoView) findViewById(R.id.image1);
-                photoView.setImageResource(R.drawable.it3b);
+                photoView.setImageResource(R.drawable.itb3);
 
               //  ImageView img=(ImageView)findViewById(R.id.image1);
                 //mAttacher= new PhotoViewAttacher(img);

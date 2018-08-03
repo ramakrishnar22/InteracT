@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TabLayout;
 
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.view.ViewPager;
 
 import android.support.design.widget.NavigationView;
@@ -31,6 +32,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import static java.security.AccessController.getContext;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener
@@ -186,6 +189,14 @@ public class MainActivity extends AppCompatActivity
             Intent aboutpage = new Intent(getApplicationContext(), about_page.class);
             startActivity(aboutpage);
         }
+        else if(id==R.id.faculty){
+          Intent intent = new Intent(getApplicationContext(),Faculty.class);
+          startActivity(intent);
+      }
+      else if(id==R.id.events){
+          Intent intent = new Intent(getApplicationContext(),Events.class);
+          startActivity(intent);
+      }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

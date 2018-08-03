@@ -15,7 +15,7 @@
         <item
             android:id="@+id/UTschedule"
             android:icon="@drawable/schedule"
-            android:title="UT schedule" />
+            android:title="UT Schedule" />
         <item
             android:id="@+id/events"
             android:icon="@drawable/events"

@@ -78,7 +78,7 @@
                     android:layout_margin="3dp"
                     android:layout_weight="1"
                     android:checked="false"
-                    android:text="Semester 3"
+                    android:text="Sem 3"
                     android:textColor="#1e90ff" />
 
                 <RadioButton
@@ -88,7 +88,7 @@
                     android:layout_margin="3dp"
                     android:layout_weight="1"
                     android:checked="false"
-                    android:text="Semester 5"
+                    android:text="Sem 5"
                     android:textColor="#1e90ff" />
 
                 <RadioButton
@@ -98,7 +98,7 @@
                     android:layout_margin="3dp"
                     android:layout_weight="1"
                     android:checked="false"
-                    android:text="semester 7"
+                    android:text="Sem 7"
                     android:textColor="#1e90ff" />
 
 

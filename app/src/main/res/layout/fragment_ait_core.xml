@@ -14,11 +14,66 @@
             android:layout_height="wrap_content">
             <!--students-->
             <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/sandydp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/sandna"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
+                android:elevation="10dp"
+                />
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                app:cardElevation="0dp"
+                android:id="@+id/sandy"
+                android:layout_marginTop="10dp"
+                android:layout_toLeftOf="@id/sandydp"
+                app:cardBackgroundColor="#99000000"
+                android:layout_marginRight="-45dp"
+                app:cardCornerRadius="15dp"
+                android:layout_marginLeft="20dp">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="50dp"
+                    android:layout_marginTop="15dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="22sp"
+                        android:textColor="#ffffff"
+                        android:layout_centerHorizontal="true"
+                        android:text="Mr. A. Sandana"
+                        android:id="@+id/sandyname"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="22sp"
+                        android:textColor="#ffffff"
+                        android:layout_centerHorizontal="true"
+                        android:text=" Karuppan"
+                        android:id="@+id/sandyname2"
+                        android:layout_below="@+id/sandyname"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/sandypos"
+                        android:textSize="15sp"
+                        android:layout_below="@id/sandyname2"
+                        android:layout_centerHorizontal="true"
+                        android:text="Faculty Co-ordinator,AIT"
+                        android:textColor="#ffffff"/>
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/rahuldp"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_alignParentLeft="true"
-                android:src="@drawable/ravi"
+                android:src="@drawable/rahul"
+                android:layout_below="@id/sandy"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="15dp"
                 android:elevation="10dp"
@@ -33,6 +88,7 @@
                 app:cardBackgroundColor="#99000000"
                 android:layout_marginLeft="-45dp"
                 app:cardCornerRadius="15dp"
+                android:layout_below="@id/sandy"
                 android:layout_marginRight="15dp">
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -45,7 +101,7 @@
                         android:textSize="22sp"
                         android:textColor="#ffffff"
                         android:layout_centerHorizontal="true"
-                        android:text="Rahul Sriram"
+                        android:text="Rahul Sriram B"
                         android:id="@+id/rahulname"/>
                     <TextView
                         android:layout_width="wrap_content"
@@ -54,7 +110,7 @@
                         android:layout_below="@id/rahulname"
                         android:textSize="15sp"
                         android:layout_centerHorizontal="true"
-                        android:text="President, AIT"
+                        android:text="Student Co-ordinator/President, AIT"
                         android:textColor="#ffffff"/>
                 </RelativeLayout>
             </android.support.v7.widget.CardView>
@@ -63,7 +119,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_alignParentRight="true"
-                android:src="@drawable/ravi"
+                android:src="@drawable/dharshini"
                 android:layout_below="@id/rahuldp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="15dp"
@@ -110,7 +166,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_alignParentLeft="true"
-                android:src="@drawable/ravi"
+                android:src="@drawable/abhi"
                 android:layout_below="@id/dharshdp"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="15dp"
@@ -157,7 +213,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_alignParentRight="true"
-                android:src="@drawable/ravi"
+                android:src="@drawable/sathya"
                 android:layout_below="@id/sundudp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="15dp"
@@ -226,7 +282,7 @@
                         android:layout_height="100dp"
                         android:layout_below="@id/events"
                         android:id="@+id/loga"
-                        android:src="@drawable/ravi"
+                        android:src="@drawable/sanjay"
                         android:layout_marginTop="10dp"/>
                     <TextView
                         android:layout_width="match_parent"
@@ -235,7 +291,7 @@
                         android:layout_toRightOf="@id/loga"
                         android:id="@+id/loganame"
                         android:text="Loga Sanjay"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="43dp"
                         android:textColor="#ffffff"
                         android:textAlignment="center"
                         android:textSize="22sp"/>
@@ -245,7 +301,7 @@
                         android:layout_below="@id/loga"
                         android:id="@+id/priya"
                         android:layout_marginTop="10dp"
-                        android:src="@drawable/ravi"/>
+                        android:src="@drawable/priya"/>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -254,7 +310,7 @@
                         android:text="Priya Dharshini"
                         android:id="@+id/priyaname"
                         android:textColor="#ffffff"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="43dp"
                         android:textAlignment="center"
                         android:textSize="22sp"/>
                     <de.hdodenhof.circleimageview.CircleImageView
@@ -271,7 +327,7 @@
                         android:layout_toRightOf="@id/ravi"
                         android:text="Ravi Kiran"
                         android:id="@+id/raviname"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="43dp"
                         android:textColor="#ffffff"
                         android:textAlignment="center"
                         android:textSize="22sp"/>
@@ -282,13 +338,13 @@
                         android:id="@+id/varsh"
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="10dp"
-                        android:src="@drawable/ravi"/>
+                        android:src="@drawable/varshi"/>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/varshname"
                         android:layout_below="@id/ravi"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="43dp"
                         android:layout_marginBottom="10dp"
                         android:layout_toRightOf="@id/varsh"
                         android:text="Varshitha"

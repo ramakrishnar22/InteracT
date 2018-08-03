@@ -136,7 +136,7 @@
                         android:layout_below="@id/AboutT"
                         android:textColor="#ffffff"
                         android:textSize="15sp"
-                        android:text="The department of information technology was established in the year 1999.Our mission is to provide quality education to the student and impart IT excellence in them.Apart from making them good technocrats.We also provide individual attention to make them good citizens of our nations to serve the industry and society constructively"/>
+                        android:text="The department of Information Technology was established in the year 1999. Our mission is to provide quality education to the students and impart IT excellence in them. Apart from making them good technocrats, we also provide individual attention to make them good citizens of our nations to serve the industry and society constructively."/>
                 </RelativeLayout>
             </android.support.v7.widget.CardView>
 
@@ -175,7 +175,7 @@
                     android:textSize="22sp"
                     android:textColor="#ffffff"
                     android:layout_centerHorizontal="true"
-                    android:text="Dr.T.Nagarajan"
+                    android:text="Dr. T. Nagarajan"
                     android:id="@+id/hodname"/>
                     <TextView
                         android:layout_width="wrap_content"
@@ -184,7 +184,7 @@
                         android:layout_below="@id/hodname"
                         android:textSize="15sp"
                         android:layout_centerHorizontal="true"
-                        android:text="Professor and HOD"
+                        android:text="Head of Department and Professor"
                         android:textColor="#ffffff"/>
                 </RelativeLayout>
             </android.support.v7.widget.CardView>
@@ -193,7 +193,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_alignParentLeft="true"
-                android:src="@drawable/hod"
+                android:src="@drawable/it_srinivasan"
                 android:layout_below="@id/HOD"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="15dp"
@@ -202,7 +202,7 @@
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:id="@+id/Sandy"
+                android:id="@+id/Srini"
                 android:layout_marginTop="10dp"
                 android:layout_below="@id/HOD"
                 android:layout_toRightOf="@id/dp1"
@@ -222,16 +222,16 @@
                         android:textSize="20sp"
                         android:textColor="#ffffff"
                         android:layout_centerHorizontal="true"
-                        android:text="Dr.A.Sandhana Karuppan"
-                        android:id="@+id/sandyname"/>
+                        android:text="Dr. R. Srinivasan"
+                        android:id="@+id/srininame"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/sandydes"
-                        android:layout_below="@id/sandyname"
+                        android:id="@+id/srinides"
+                        android:layout_below="@id/srininame"
                         android:textSize="15sp"
                         android:layout_centerHorizontal="true"
-                        android:text="Professor and Student Co-Ordinator"
+                        android:text="Professor "
                         android:textColor="#ffffff"/>
                 </RelativeLayout>
             </android.support.v7.widget.CardView>
@@ -240,8 +240,8 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_alignParentLeft="true"
-                android:src="@drawable/hod"
-                android:layout_below="@id/Sandy"
+                android:src="@drawable/shahina"
+                android:layout_below="@id/Srini"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="15dp"
                 android:elevation="10dp"
@@ -249,10 +249,10 @@
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:id="@+id/Srini"
+                android:id="@+id/Shahina"
                 android:layout_marginTop="10dp"
                 app:cardElevation="0dp"
-                android:layout_below="@id/Sandy"
+                android:layout_below="@id/Srini"
                 android:layout_toRightOf="@id/dp1"
                 app:cardBackgroundColor="#99000000"
                 android:layout_marginLeft="-45dp"
@@ -269,13 +269,13 @@
                         android:textSize="22sp"
                         android:textColor="#ffffff"
                         android:layout_centerHorizontal="true"
-                        android:text="Dr.R.Srinivasan"
-                        android:id="@+id/srininame"/>
+                        android:text="Dr. A. Shahina"
+                        android:id="@+id/shahinaname"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/srinides"
-                        android:layout_below="@id/srininame"
+                        android:id="@+id/shahinades"
+                        android:layout_below="@id/shahinaname"
                         android:textSize="15sp"
                         android:layout_centerHorizontal="true"
                         android:text="Professor"

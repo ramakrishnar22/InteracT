@@ -63,22 +63,22 @@ public class identity extends Fragment  implements View.OnClickListener{
 
         switch (view.getId()){
             case R.id.btn1:
-                String doc ="https://drive.google.com/open?id=1MNJFMDILEW92PIBG2ZQePI4oOBiLK7fa";
+                String doc ="https://drive.google.com/open?id=1guOogw0UIEUUj2idDm_eTqcCOluk4DIt";
                 Intent pdfintent=new Intent(Intent.ACTION_VIEW, Uri.parse(doc));
                 startActivity(pdfintent);
                 break;
             case R.id.btn2:
-                String doc1 ="https://drive.google.com/open?id=1MNJFMDILEW92PIBG2ZQePI4oOBiLK7fa";
+                String doc1 ="https://drive.google.com/open?id=1vwCHbD3dVMaOlTlZwZrNFRI_g-YvuJ3E";
                 Intent pdfintent1=new Intent(Intent.ACTION_VIEW, Uri.parse(doc1));
                 startActivity(pdfintent1);
                 break;
             case R.id.btn3:
-                String doc2 ="https://drive.google.com/open?id=1MNJFMDILEW92PIBG2ZQePI4oOBiLK7fa";
+                String doc2 ="https://drive.google.com/open?id=16gweUqkDLyMecL6_NRQubPgPElkU6g6U";
                 Intent pdfintent2=new Intent(Intent.ACTION_VIEW, Uri.parse(doc2));
                 startActivity(pdfintent2);
                 break;
             case R.id.btn4:
-                String doc3 ="https://drive.google.com/open?id=1MNJFMDILEW92PIBG2ZQePI4oOBiLK7fa";
+                String doc3 ="https://drive.google.com/open?id=1bus7OjEf4nZDNi236qRYlhoO85CejQEN";
                 Intent pdfintent3=new Intent(Intent.ACTION_VIEW, Uri.parse(doc3));
                 startActivity(pdfintent3);
                 break;

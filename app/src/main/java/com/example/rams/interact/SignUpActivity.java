@@ -34,7 +34,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class SignUpActivity extends AppCompatActivity {
-     private EditText signupmail;
+    private EditText signupmail;
     private EditText signuppass;
     private EditText signuppass1;
     private Button signupbtn;
@@ -194,38 +194,38 @@ public class SignUpActivity extends AppCompatActivity {
                     signupmail.setText(null);
                     email="";
                 }
-                 if( !(pass.equals(pass1) && (pass1.length() > 8) && (pass.length() > 8))){
-                     Toast.makeText(SignUpActivity.this,"Passwords are not equal!: Min of 9 characters needed!",Toast.LENGTH_LONG).show();
-                     signuppass.setText(null);
-                     signuppass1.setText(null);
-                     pass="";
-                 }
+                if( !(pass.equals(pass1) && (pass1.length() > 8) && (pass.length() > 8))){
+                    Toast.makeText(SignUpActivity.this,"Passwords are not equal!: Min of 9 characters needed!",Toast.LENGTH_LONG).show();
+                    signuppass.setText(null);
+                    signuppass1.setText(null);
+                    pass="";
+                }
                 if(!TextUtils.isEmpty(email)&& !TextUtils.isEmpty(pass)){
                     progressbar.setVisibility(View.VISIBLE);
-                      mAuth.createUserWithEmailAndPassword(email,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                          @Override
-                          public void onComplete(@NonNull Task<AuthResult> task) {
-                              if(task.isSuccessful()){
-                                  currentUser= mAuth.getCurrentUser();
-                                  currentUser.sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
-                                      @Override
-                                      public void onComplete(@NonNull Task<Void> task) {
-                                          if(task.isSuccessful()){
-                                              signupmail.setText(null);
-                                              signuppass.setText(null);
-                                              signuppass1.setText(null);
-                                              mAuth.signOut();
-                                              Toast.makeText(SignUpActivity.this,"Check your mail for confirmation link and Click on it to verify",Toast.LENGTH_LONG).show();
-                                              Intent loginIntent = new Intent(getApplicationContext(),LoginActivity.class);
-                                              startActivity(loginIntent);
-                                          }
-                                      }
-                                  });
+                    mAuth.createUserWithEmailAndPassword(email,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if(task.isSuccessful()){
+                                currentUser= mAuth.getCurrentUser();
+                                currentUser.sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        if(task.isSuccessful()){
+                                            signupmail.setText(null);
+                                            signuppass.setText(null);
+                                            signuppass1.setText(null);
+                                            mAuth.signOut();
+                                            Toast.makeText(SignUpActivity.this,"Check your mail for confirmation link and Click on it to verify",Toast.LENGTH_LONG).show();
+                                            Intent loginIntent = new Intent(getApplicationContext(),LoginActivity.class);
+                                            startActivity(loginIntent);
+                                        }
+                                    }
+                                });
 
-                              }
-                              progressbar.setVisibility(View.INVISIBLE);
-                          }
-                      });
+                            }
+                            progressbar.setVisibility(View.INVISIBLE);
+                        }
+                    });
                 }else{
                     Toast.makeText(SignUpActivity.this,"Empty Fields!",Toast.LENGTH_LONG).show();
                 }

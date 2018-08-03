@@ -1,6 +1,7 @@
 package com.example.rams.interact;
 
 import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -23,16 +24,19 @@ public class about_page extends AppCompatActivity {
         FontChanger fontChanger = new FontChanger(getAssets(),"font/sourceSansProLight.ttf");
         fontChanger.replaceFonts((ViewGroup)findViewById(android.R.id.content));
         Typeface bold = Typeface.createFromAsset(getAssets(),"font/sourceSansProSemiBold.ttf");
+        ((TextView)findViewById(R.id.openlibT)).setTypeface(bold);
         ((TextView)findViewById(R.id.about)).setTypeface(bold);
         ((TextView)syed.findViewById(R.id.devname)).setText("Syed Shahinsha");
         ((TextView)syed.findViewById(R.id.devname)).setTypeface(bold);
+        ((ImageView)syed.findViewById(R.id.devdp)).setImageResource(R.drawable.syed);
+        ((ImageView)rama.findViewById(R.id.devdp)).setImageResource(R.drawable.rams);
         ((TextView)sai.findViewById(R.id.devname)).setText("Sairam Harikrishnan");
         ((TextView)sai.findViewById(R.id.devname)).setTypeface(bold);
-        ((TextView)rama.findViewById(R.id.devname)).setText("Ramakrishnar Mutthaiah");
+        ((TextView)rama.findViewById(R.id.devname)).setText("Rama Krishnar Muthaiah");
         ((TextView)rama.findViewById(R.id.devname)).setTypeface(bold);
         ((TextView)sangeeth.findViewById(R.id.devname)).setText("Sangeeth Shravan");
         ((TextView)sangeeth.findViewById(R.id.devname)).setTypeface(bold);
-        ((TextView)syed.findViewById(R.id.mail)).setText("syedshahinsha@gmail.com");
+        ((TextView)syed.findViewById(R.id.mail)).setText("syedsha97.i@gmail.com");
         ((TextView)syed.findViewById(R.id.phno)).setText("+919500308703");
         ((TextView)sai.findViewById(R.id.mail)).setText("sairamhari98@gmail.com");
         ((TextView)sai.findViewById(R.id.phno)).setText("+919789917857");
@@ -40,7 +44,6 @@ public class about_page extends AppCompatActivity {
         ((TextView)rama.findViewById(R.id.phno)).setText("+919629567070");
         ((TextView)sangeeth.findViewById(R.id.mail)).setText("sangeeth209@gmail.com");
         ((TextView)sangeeth.findViewById(R.id.phno)).setText("+919597398745");
-        ((ImageView)sangeeth.findViewById(R.id.devdp)).setImageResource(R.drawable.sange);
         ((ImageView)sangeeth.findViewById(R.id.devdp)).setImageResource(R.drawable.sange);
         ((ImageView)sai.findViewById(R.id.devdp)).setImageResource(R.drawable.sai);
     }

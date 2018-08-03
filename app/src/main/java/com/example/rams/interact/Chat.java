@@ -88,7 +88,7 @@ public class Chat extends Fragment {
         listenerRegistration = fb.collection("Messages").orderBy("time", Query.Direction.ASCENDING).addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(QuerySnapshot documentSnapshots, FirebaseFirestoreException e) {
-                if(e==null) {
+                if (e == null) {
                     List<DocumentChange> docs;
                     docs = documentSnapshots.getDocumentChanges();
                     for (DocumentChange doc : documentSnapshots.getDocumentChanges()) {
@@ -112,10 +112,10 @@ public class Chat extends Fragment {
                                 checkmsg = String.valueOf(result.get("msg"));
                             }
                         }
+                        ChatAdapter ca = new ChatAdapter(getActivity(), list);
+                        r.setAdapter(ca);
+                        r.setLayoutManager(llm);
                     }
-                    ChatAdapter ca = new ChatAdapter(getActivity(), list);
-                    r.setAdapter(ca);
-                    r.setLayoutManager(llm);
                 }
             }
         });

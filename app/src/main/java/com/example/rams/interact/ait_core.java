@@ -35,6 +35,8 @@ public class ait_core extends Fragment {
         super.onActivityCreated(savedInstanceState);
         FontChanger fontChanger = new FontChanger(getActivity().getAssets(),"font/sourceSansProLight.ttf");
         fontChanger.replaceFonts((ViewGroup)this.getView());
+        ((TextView)rootView.findViewById(R.id.sandyname)).setTypeface(Typeface.createFromAsset(getActivity().getAssets(),"font/sourceSansProSemiBold.ttf"));
+        ((TextView)rootView.findViewById(R.id.sandyname2)).setTypeface(Typeface.createFromAsset(getActivity().getAssets(),"font/sourceSansProSemiBold.ttf"));
         ((TextView)rootView.findViewById(R.id.rahulname)).setTypeface(Typeface.createFromAsset(getActivity().getAssets(),"font/sourceSansProSemiBold.ttf"));
         ((TextView)rootView.findViewById(R.id.dharshname)).setTypeface(Typeface.createFromAsset(getActivity().getAssets(),"font/sourceSansProSemiBold.ttf"));
         ((TextView)rootView.findViewById(R.id.sunduname)).setTypeface(Typeface.createFromAsset(getActivity().getAssets(),"font/sourceSansProSemiBold.ttf"));

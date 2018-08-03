@@ -30,6 +30,7 @@
                 android:textSize="20sp"
                 android:text="Event Des"
                 android:layout_centerHorizontal="true"
+                android:layout_marginLeft="10dp"
                 android:textColor="#fff"
                 android:id="@+id/eventdes"/>
             <TextView

@@ -9,6 +9,9 @@ https://github.com/saihari1998
 ## Sangeeth Shravan
 https://github.com/Sangeethshravan97
 
+# Designed By
+Syed Shahinsha
+
 ## License
 ```
 MIT License

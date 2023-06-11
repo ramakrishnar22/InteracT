@@ -5,7 +5,7 @@ This App is dedicated to our Department of Information Technology
 ## Rama Krishnar Muthaiah
 https://github.com/ramakrishnar22
 ## Sairam Harikrishnan
-https://github.com/saihari1998
+[https://github.com/saihari1998](https://github.com/sai-hari98)
 ## Sangeeth Shravan
 https://github.com/Sangeethshravan97
 
